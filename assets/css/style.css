@@ -1,6 +1,6 @@
 * {
-	font-family: arial, helvetica, sans-serif;
-	color: #333;
+font-family: arial, helvetica, sans-serif;
+color: #333;
 }
 
 body {
@@ -23,13 +23,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-.guest-book {
-	font-family: Snell Roundhand, cursive!important;
-	font-style: italic;
-	font-variant: small-caps;
-	color: darkblue;
-}
-
 input {
 	margin: 0% auto;
 	display: inline-block;
@@ -38,11 +31,11 @@ input {
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Firefox */
 input[type=number] {
-	-moz-appearance:textfield;
+  -moz-appearance:textfield;
 }
