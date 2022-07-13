@@ -9,13 +9,11 @@
 <h1>Song Organizer</h1><hr />
 
 <?php
-//TODO: 1
 if (isset($_GET['action'])) {
 	if ((file_exists("assets/txt/songs.txt")) && (filesize("assets/txt/songs.txt") != 0)) {
 		$SongArray = file("assets/txt/songs.txt");
 			
 			switch ($_GET['action']) {
-			//TODO: 2
 			case 'Remove Duplicates':
 				$SongArray = array_unique($SongArray);
 				$SongArray = array_values($SongArray);
@@ -27,7 +25,6 @@ if (isset($_GET['action'])) {
 				shuffle($SongArray);
 				break;
  } //End of the switch statement
-	//TODO: 3
 	if (count($SongArray)>0) {
 		$NewSongs = implode($SongArray);
 	$SongStore = fopen("assets/txt/songs.txt","wb");
@@ -42,7 +39,6 @@ if (isset($_GET['action'])) {
 	}
 }
 
-//TODO: 4
 if (isset($_POST['submit']) && ($_POST['SongName']) != '') /** Check if empty **/ {
 	$SongToAdd = stripslashes($_POST['SongName']) . "\n";
 	$ExistingSongs = array();
@@ -50,11 +46,10 @@ if (isset($_POST['submit']) && ($_POST['SongName']) != '') /** Check if empty **
 	if (file_exists("assets/txt/songs.txt") && filesize("assets/txt/songs.txt") > 0) {
 		$ExistingSongs = file("assets/txt/songs.txt");
 	}
-//TODO: 5
 	if (in_array($SongToAdd, $ExistingSongs)) {
 		echo "<p>The song you entered already exists!<br />\n";
 		echo "Your song was not added to the list.</p>";
-	} /** TODO: 6 **/ else {
+	} else {
 		$SongFile = fopen("assets/txt/songs.txt", "ab");
 		if ($SongFile === false)
 			echo "There was an error saving your message!\n";
@@ -65,7 +60,6 @@ if (isset($_POST['submit']) && ($_POST['SongName']) != '') /** Check if empty **
 		}
 	}
 }
-//TODO: 7
 if ((!file_exists("assets/txt/songs.txt")) || (filesize("assets/txt/songs.txt") == 0)) {
 	echo "<p>There are no songs in the list.</p>\n";
 } else {
